@@ -1,7 +1,6 @@
 class Solution {
     public String solution(String s) {
         
-        s = s.toLowerCase();
         StringBuilder sb = new StringBuilder(s);
         int len = sb.length();
         
@@ -12,8 +11,11 @@ class Solution {
                 idx = 0;
             }
             else {
-                if(idx%2==0){
+                if(idx % 2 == 0){
                     sb.setCharAt(i, Character.toUpperCase(c));
+                }
+                else{
+                    sb.setCharAt(i, Character.toLowerCase(c));
                 }
                 idx++;
             }
