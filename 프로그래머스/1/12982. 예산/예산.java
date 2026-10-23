@@ -5,6 +5,23 @@ class Solution {
         int answer = 0;
         long sum = 0;
         Arrays.sort(d);
+        for (int x : d) {
+            if (budget < x) break;   // 이번 부서 못 주면 끝
+            budget -= x;
+            answer++;
+        }
+        return answer;
+    }
+}
+
+/*
+import java.util.*;
+
+class Solution {
+    public int solution(int[] d, int budget) {
+        int answer = 0;
+        long sum = 0;
+        Arrays.sort(d);
         for(int i=0; i<d.length; i++){
             sum += d[i];
             if(sum>budget){
@@ -18,3 +35,4 @@ class Solution {
         return answer;
     }
 }
+*/
