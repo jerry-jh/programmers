@@ -7,12 +7,10 @@ class Solution {
             int sum = 0;
             for(int j=i; j<=n; j++){
                 sum += j;
-                if(sum==n){
-                    answer++;
+                if (sum >= n) {
+                    if (sum == n) answer++;
                     break;
                 }
-                else if(sum>n) break;
-                else continue;
             }
         }
         return answer;
