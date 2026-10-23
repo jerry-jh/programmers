@@ -2,22 +2,11 @@ class Solution {
     public int[] solution(int n, int m) {
         int[] answer = new int[2];
         answer[0] = gcd(n, m);
-        answer[1] = (n*m)/answer[0];
+        answer[1] = n / answer[0] * m;   // gcd로 먼저 나누고 곱하기
         return answer;
     }
-    private int gcd(int x, int y){
-        int tmp = 0;
-        if(x < y){
-            tmp = x;
-            x = y;
-            y = tmp;
-        }
-        while(y>0){
-            tmp = x;
-            x = y;
-            y = tmp%y;
-            return gcd(x, y);
-        }
-        return x;
+    
+    private int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
     }
 }
