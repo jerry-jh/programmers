@@ -16,3 +16,13 @@ class Solution {
         return answer;
     }
 }
+
+/*
+// 배열 자르기는 copyOfRange 활용
+for (int i = 0; i < commands.length; i++) {
+    int start = commands[i][0], end = commands[i][1], k = commands[i][2];
+    int[] arr = Arrays.copyOfRange(array, start - 1, end);   // [start-1, end) 복사
+    Arrays.sort(arr);
+    answer[i] = arr[k - 1];
+}
+*/
