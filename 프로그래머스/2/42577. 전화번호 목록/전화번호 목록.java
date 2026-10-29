@@ -6,7 +6,7 @@ class Solution {
         int len = phone_book.length;
         Arrays.sort(phone_book);
         
-        for(int i=len-1; i>=1; i--){
+        for(int i=1; i<len; i++){
             if(phone_book[i].startsWith(phone_book[i-1])){
                 return false;
             }
