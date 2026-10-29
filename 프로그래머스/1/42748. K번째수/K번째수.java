@@ -1,28 +1,26 @@
 import java.util.*;
+
+
 class Solution {
     public int[] solution(int[] array, int[][] commands) {
-        int[] answer = new int[commands.length];
+       
+        int len = commands.length;
+        int[] answer = new int[len];
         
-        for(int i=0; i<commands.length; i++){
-            int[] arr = new int[commands[i][1] - commands[i][0] + 1];
-            int a = commands[i][0]-1;
-            for(int j = 0; j<commands[i][1] - commands[i][0] + 1; j++){
-                arr[j] = array[a];
-                a++;
+        for(int i=0; i<len; i++){
+            
+            int len2 = commands[i][1]-commands[i][0]+1;
+            int[] arr = new int[len2];
+            int k = commands[i][0]-1;
+            
+            for(int j=0; j<len2; j++){
+                arr[j] = array[k];
+                k++;
             }
             Arrays.sort(arr);
             answer[i] = arr[commands[i][2]-1];
         }
+        
         return answer;
     }
 }
-
-/*
-// 배열 자르기는 copyOfRange 활용
-for (int i = 0; i < commands.length; i++) {
-    int start = commands[i][0], end = commands[i][1], k = commands[i][2];
-    int[] arr = Arrays.copyOfRange(array, start - 1, end);   // [start-1, end) 복사
-    Arrays.sort(arr);
-    answer[i] = arr[k - 1];
-}
-*/
