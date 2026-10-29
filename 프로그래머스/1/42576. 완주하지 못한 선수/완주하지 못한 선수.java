@@ -3,18 +3,17 @@ import java.util.*;
 class Solution {
     public String solution(String[] participant, String[] completion) {
         
-        int a = participant.length;
-        int b = completion.length;
+        int num = completion.length;
         
         Arrays.sort(participant);
         Arrays.sort(completion);
         
         
-        for(int i=0; i<b; i++){
+        for(int i=0; i<num; i++){
             if(!(participant[i].equals(completion[i]))){
                 return participant[i];
             }
         }
-        return participant[a-1];
+        return participant[num];
     }
 }
